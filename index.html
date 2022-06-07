@@ -54,20 +54,23 @@
                     <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle1, 'bg-green-600': !toggle1, 'hover:bg-red-500': toggle1, 'hover:bg-green-500': !toggle1  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                :class="[{ 'bg-red-600': toggle1, 'bg-green-600': !toggle1, 'hover:bg-red-500': toggle1, 'hover:bg-green-500': !toggle1 }, selectedId == 1 ? 'border-4' : '' ]"
+                                @click="getTrashData(1)"
                             >1</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle2, 'bg-green-600': !toggle2, 'hover:bg-red-500': toggle2, 'hover:bg-green-500': !toggle2  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                v-bind:class="[{ 'bg-red-600': toggle2, 'bg-green-600': !toggle2, 'hover:bg-red-500': toggle2, 'hover:bg-green-500': !toggle2  }, selectedId == 2 ? 'border-4' : '']"
+                                @click="getTrashData(2)"
                             >2</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle3, 'bg-green-600': !toggle3, 'hover:bg-red-500': toggle3, 'hover:bg-green-500': !toggle3  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                v-bind:class="[{ 'bg-red-600': toggle3, 'bg-green-600': !toggle3, 'hover:bg-red-500': toggle3, 'hover:bg-green-500': !toggle3  }, selectedId == 3 ? 'border-4' : '']"
+                                @click="getTrashData(3)"
                             >3</button>
                         </div>
                     </div>
@@ -79,20 +82,23 @@
                     <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle4, 'bg-green-600': !toggle4, 'hover:bg-red-500': toggle4, 'hover:bg-green-500': !toggle4  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                v-bind:class="[{ 'bg-red-600': toggle4, 'bg-green-600': !toggle4, 'hover:bg-red-500': toggle4, 'hover:bg-green-500': !toggle4  }, selectedId == 4 ? 'border-4' : '']"
+                                @click="getTrashData(4)"
                             >4</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle5, 'bg-green-600': !toggle5, 'hover:bg-red-500': toggle5, 'hover:bg-green-500': !toggle5  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                v-bind:class="[{ 'bg-red-600': toggle5, 'bg-green-600': !toggle5, 'hover:bg-red-500': toggle5, 'hover:bg-green-500': !toggle5  }, selectedId == 5 ? 'border-4' : '']"
+                                @click="getTrashData(5)"
                             >5</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
-                                v-bind:class="{ 'bg-red-600': toggle6, 'bg-green-600': !toggle6, 'hover:bg-red-500': toggle6, 'hover:bg-green-500': !toggle6  }"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
+                                v-bind:class="[{ 'bg-red-600': toggle6, 'bg-green-600': !toggle6, 'hover:bg-red-500': toggle6, 'hover:bg-green-500': !toggle6  }, selectedId == 6 ? 'border-4' : '']"
+                                @click="getTrashData(6)"
                             >6</button>
                         </div>
                     </div>
@@ -105,7 +111,7 @@
                         <span 
                             class="text-gray-100 text-md font-bold mr-2 px-3 py-1 rounded-lg shadow-md"
                             v-bind:class="{ 'bg-red-600': toggle1, 'bg-green-600': !toggle1 }"
-                        >{{status}}</span>
+                        >{{data.status}}</span>
                         <span class="pt-1">
                             <span style="vertical-align:middle;"><ion-icon class="-rotate-90 text-2xl" name="battery-full"></ion-icon></span> 
                             <span class="text-gray-800 text-md font-bold">90%</span>
@@ -114,10 +120,10 @@
                 </div>            
                 <div class="my-6 mx-1">
                     <p class="py-1"><span class="font-bold">ID :</span> Durian1</p>
-                    <p class="py-1"><span class="font-bold">Alamat :</span> {{alamat}}</p>
+                    <p class="py-1"><span class="font-bold">Alamat :</span> {{data.alamat}}</p>
                     <p class="py-1">
                         <span class="font-bold">Status :</span> 
-                        <span v-bind:class="{ 'text-red-600': toggle1, 'text-green-600': !toggle1 }">{{diambil}}</span>
+                        <span v-bind:class="{ 'text-red-600': toggle1, 'text-green-600': !toggle1 }">{{data.diambil}}</span>
                     </p>
                     <p class="py-2 font-bold">Gambar :</p>
                     <img class="lg:w-full w-4/5 py-1 rounded-xl object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
@@ -159,7 +165,11 @@
                     status: null,
                     alamat: null,
                     diambil: null,
-                    dropdown: 'Gg Durian'
+                    dropdown: 'Gg Durian',
+                    data:{},
+                    data1:{},
+                    data2:{},
+                    selectedId: 1
                 }
             },
             mounted () {
@@ -170,13 +180,17 @@
                     .then(response => (
                         data = response.data.feeds,
                         latest =  data[data.length-1],
-                        this.status = latest.field1,
-                        this.alamat = latest.field2,
-                        this.diambil = latest.field3,
-                        this.toggle1 = latest.field1 == 'Penuh' ? true : false
+                        this.data1={
+                            status: latest.field1,
+                            alamat: latest.field2,
+                            diambil: latest.field3,
+                            toggle1: latest.field1 == 'Penuh' ? true : false
+                        }
                         // console.log(latest)
                     ))
                 }, 100 );
+                
+                getTrashData(this.selectedId)
             },
             methods: {
                 sampahDiambil(){
@@ -190,6 +204,21 @@
                 },
                 selectGg(Gg){
                     this.dropdown = Gg
+                },
+                getTrashData(id){
+                    this.selectedId = id
+                    this.data2={
+                        status: "Tidak Ada Alat",
+                        alamat: "-",
+                        diambil: "-",
+                        toggle1: true
+                    }
+                    if (this.selectedId != 1) {
+                        this.data = this.data2
+                    }
+                    if (this.selectedId == 1) {
+                        this.data = this.data1
+                    }
                 }
             }
         })
