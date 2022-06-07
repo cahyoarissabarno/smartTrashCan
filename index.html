@@ -189,17 +189,18 @@
                         // console.log(latest)
                     ))
                     this.getTrashData(this.selectedId)
-                    console.log(this.data)
+                    // console.log(this.data)
                 }, 100 );
             },
             methods: {
                 sampahDiambil(){
-                   if (this.toggle1) {
+                   if (!this.toggle1 && this.data.status == 'penuh') {
                         axios
                         .post('https://api.thingspeak.com/update?api_key=R02TSPZ1CR8IOCOX&field1=Tidak Penuh&field2=Jl.Esp32oke&field3=Sudah Diambil')
                         .then(response => (
                             console.log(response)
                         ))
+                        console.log('do')
                    }
                 },
                 selectGg(Gg){
