@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-violet-500 shadow">
+        <div class="container px-6 py-3 mx-auto md:flex">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">
+                        Smart Trash Can
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button type="button" class="text-gray-500" aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                
+                <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+                <div id="dropdown" class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -22px);">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="grid overflow-hidden md grid-cols-5 auto-rows-auto">
+        <div class="box col-span-3 bg-red-100">10</div>
+        <div class="box col-span-2 bg-gray-100 items-center p-7">
+            <div class="grid overflow-hidden items-center my-3 md grid-cols-5 auto-rows-auto gap-1">
+                <div class="box col-span-3 text-3xl font-bold">DETAIL</div>
+                <div class="box col-span-1"> 
+                    <button class="px-4 py-2 font-medium text-white capitalize bg-red-600 rounded-md">
+                        Penuh
+                    </button>
+                </div>
+                <div class="box col-span-1">battery</div>
+            </div>
+            
+            <div class="container my-6 mx-4">
+                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
+                    <div class="box col-span-1">Nama :</div>
+                    <div class="box col-span-4">
+                        <p>Budi</p>
+                    </div>
+                </div>
+                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
+                    <div class="box col-span-1">Lokasi :</div>
+                    <div class="box col-span-4">
+                        <p>jl. kjdkjsdskdjskdskdj</p>
+                    </div>
+                </div>
+                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
+                    <div class="box col-span-1">Status :</div>
+                    <div class="box col-span-4">
+                        <p>Diambil</p>
+                    </div>
+                </div>
+                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
+                    <div class="box col-span-1">Gambar :</div>
+                </div>
+                <div class="mx-6">
+                    <img class="w-full h-64 rounded-xl shadow-lg object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                </div>
+                <div class="grid overflow-hidden md grid-cols-5 auto-rows-auto gap-1 mt-5">
+                    <div class="box col-span-4">
+                        <button class="px-4 py-2 font-medium text-white capitalize bg-green-600 rounded-md hover:bg-green-500 w-full">
+                            Ambil Sampah
+                        </button>
+                    </div>
+                    <div class="box col-span-1">
+                        <button class="px-4 py-2 font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 w-full">
+                            Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+</body>
+</html>
