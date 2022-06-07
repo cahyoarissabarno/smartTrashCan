@@ -55,21 +55,21 @@
                         <div class="box text-center">
                             <button 
                                 class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                :class="[{ 'bg-red-600': !data.toggle1, 'bg-green-600': data.toggle1, 'hover:bg-red-500': !data.toggle1, 'hover:bg-green-500': data.toggle1 }, selectedId == 1 ? 'border-4' : '' ]"
+                                :class="[{ 'bg-red-600': data.toggle1, 'bg-green-600': !data.toggle1, 'hover:bg-red-500': data.toggle1, 'hover:bg-green-500': !data.toggle1 }, selectedId == 1 ? 'border-4' : '' ]"
                                 @click="getTrashData(1)"
                             >1</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                v-bind:class="[{ 'bg-red-600': !data.toggle2, 'bg-green-600': data.toggle2, 'hover:bg-red-500': !data.toggle2, 'hover:bg-green-500': data.toggle2  }, selectedId == 2 ? 'border-4' : '']"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800 bg-blue-500"
+                                :class="[selectedId == 2 ? 'border-4' : '' ]"
                                 @click="getTrashData(2)"
                             >2</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                v-bind:class="[{ 'bg-red-600': !data.toggle3, 'bg-green-600': data.toggle3, 'hover:bg-red-500': !data.toggle3, 'hover:bg-green-500': data.toggle3  }, selectedId == 3 ? 'border-4' : '']"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800 bg-blue-500"
+                                :class="[selectedId == 3 ? 'border-4' : '' ]"
                                 @click="getTrashData(3)"
                             >3</button>
                         </div>
@@ -82,22 +82,22 @@
                     <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                v-bind:class="[{ 'bg-red-600': !data.toggle4, 'bg-green-600': data.toggle4, 'hover:bg-red-500': !data.toggle4, 'hover:bg-green-500': data.toggle4  }, selectedId == 4 ? 'border-4' : '']"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800 bg-blue-500"
+                                :class="[selectedId == 4 ? 'border-4' : '' ]"
                                 @click="getTrashData(4)"
                             >4</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                v-bind:class="[{ 'bg-red-600': !data.toggle5, 'bg-green-600': data.toggle5, 'hover:bg-red-500': !data.toggle5, 'hover:bg-green-500': data.toggle5  }, selectedId == 5 ? 'border-4' : '']"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800 bg-blue-500"
+                                :class="[selectedId == 5 ? 'border-4' : '' ]"
                                 @click="getTrashData(5)"
                             >5</button>
                         </div>
                         <div class="box text-center">
                             <button 
-                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800"
-                                v-bind:class="[{ 'bg-red-600': !data.toggle6, 'bg-green-600': data.toggle6, 'hover:bg-red-500': !data.toggle6, 'hover:bg-green-500': data.toggle6  }, selectedId == 6 ? 'border-4' : '']"
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14 border-gray-800 bg-blue-500"
+                                :class="[selectedId == 6 ? 'border-4' : '' ]"
                                 @click="getTrashData(6)"
                             >6</button>
                         </div>
@@ -110,7 +110,7 @@
                     <div class="mt-3 lg:mt-0 flex">
                         <span 
                             class="text-gray-100 text-md font-bold mr-2 px-3 py-1 rounded-lg shadow-md"
-                            v-bind:class="{ 'bg-red-600': !data.toggle1, 'bg-green-600': data.toggle1 }"
+                            v-bind:class="{ 'bg-red-600': data.toggle1, 'bg-green-600': !data.toggle1 }"
                         >{{data.status}}</span>
                         <span class="pt-1">
                             <span style="vertical-align:middle;"><ion-icon class="-rotate-90 text-2xl" name="battery-full"></ion-icon></span> 
@@ -133,7 +133,7 @@
                     <div class="item grow mx-1">
                         <button @click="sampahDiambil" 
                             class="px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md w-full"
-                            v-bind:class="{ 'bg-green-600': !data.toggle1, 'bg-gray-300': data.toggle1, 'hover:bg-green-500': !data.toggle1 }"
+                            v-bind:class="{ 'bg-green-600': data.toggle1, 'bg-gray-300': !data.toggle1, 'hover:bg-green-500': data.toggle1 }"
                         >
                             Ambil Sampah
                         </button>
@@ -184,7 +184,7 @@
                             status: latest.field1,
                             alamat: latest.field2,
                             diambil: latest.field3,
-                            toggle1: latest.field1 == 'Penuh' ? true : false
+                            toggle1: latest.field1 == 'penuh' ? true : false
                         }
                         // console.log(latest)
                     ))
