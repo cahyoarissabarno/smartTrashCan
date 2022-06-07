@@ -8,110 +8,190 @@
   <script src="https://kit.fontawesome.com/f5a5035f15.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="shadow bg-violet-500 fixed w-full max-h-44">
-        <div class="container px-10 py-2 mx-auto flex">
-            <div class="w-full sm:flex sm:items-center sm:justify-between">
-                <div class="text-center mb-4 mt-2 sm:mb-0 sm:mt-0">
-                    <a class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">
-                        Smart Trash Can
-                    </a>
-                </div>
-                
-                <div class="relative">
-                    <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="flex justify-between w-full text-white bg-violet-400 font-medium rounded-lg shadow-xl text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">
-                        <p>Dropdown button</p> 
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-
-                    <div id="dropdown" class="w-full z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -22px);">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-                            </li>
-                        </ul>
+    <div id="app">
+        <nav class="shadow bg-violet-500 fixed w-full max-h-44">
+            <div class="container px-10 py-2 mx-auto flex">
+                <div class="w-full sm:flex sm:items-center sm:justify-between">
+                    <div class="text-center mb-4 mt-2 sm:mb-0 sm:mt-0">
+                        <a class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">
+                            Smart Trash Can
+                        </a>
+                    </div>
+                    
+                    <div class="relative">
+                        <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="flex justify-between w-full text-white bg-violet-400 font-medium rounded-lg shadow-xl text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">
+                            <p>{{ dropdown }}</p> 
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+    
+                        <div id="dropdown" class="w-full z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -22px);">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                                <li>
+                                    <a href="#" @click="selectGg('Gg Durian')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gg Durian</a>
+                                </li>
+                                <li>
+                                    <a href="#" @click="selectGg('Gg Apel')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gg Apel</a>
+                                </li>
+                                <li>
+                                    <a href="#" @click="selectGg('Gg Jeruk')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gg Jeruk</a>
+                                </li>
+                                <li>
+                                    <a href="#" @click="selectGg('Gg Anggur')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gg Anggur</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div class="grid overflow-hidden md:h-screen md grid-cols-6 auto-rows-auto">
-        <div class="box md:col-span-4 col-span-6 bg-red-100 md:mt-7 sm:mt-0 mt-10 md:pt-0 pt-10">
-            <div class="bg-white md:h-screen grid content-center md:pt-0 pt-12">
-                <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+        </nav>
+    
+        <div class="grid overflow-hidden md:h-screen md grid-cols-6 auto-rows-auto">
+            <div class="box md:col-span-4 col-span-6 bg-red-100 md:mt-7 sm:mt-0 mt-10 md:pt-0 pt-10">
+                <div class="bg-white md:h-screen grid content-center md:pt-0 pt-12">
+                    <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle1, 'bg-green-600': !toggle1, 'hover:bg-red-500': toggle1, 'hover:bg-green-500': !toggle1  }"
+                            >1</button>
+                        </div>
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle2, 'bg-green-600': !toggle2, 'hover:bg-red-500': toggle2, 'hover:bg-green-500': !toggle2  }"
+                            >2</button>
+                        </div>
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle3, 'bg-green-600': !toggle3, 'hover:bg-red-500': toggle3, 'hover:bg-green-500': !toggle3  }"
+                            >3</button>
+                        </div>
                     </div>
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+    
+                    <div class="w-full bg-gray-300 text-center md:my-6 my-2">
+                        <p class="m-auto md:py-3 py-1">Jl.Rumah Gg.Durian</p>
                     </div>
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+    
+                    <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle4, 'bg-green-600': !toggle4, 'hover:bg-red-500': toggle4, 'hover:bg-green-500': !toggle4  }"
+                            >4</button>
+                        </div>
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle5, 'bg-green-600': !toggle5, 'hover:bg-red-500': toggle5, 'hover:bg-green-500': !toggle5  }"
+                            >5</button>
+                        </div>
+                        <div class="box text-center">
+                            <button 
+                                class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md md:w-20 w-14 md:h-20 h-14"
+                                v-bind:class="{ 'bg-red-600': toggle6, 'bg-green-600': !toggle6, 'hover:bg-red-500': toggle6, 'hover:bg-green-500': !toggle6  }"
+                            >6</button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="w-full bg-gray-300 text-center md:my-6 my-2">
-                    <p class="m-auto md:py-3 py-1">Jl.Rumah Gg.Durian</p>
+            </div>
+            <div class="box md:col-span-2 col-span-6 bg-gray-100 items-center p-7 mt-12">
+                <div class="w-full lg:sm:flex lg:items-center lg:justify-between mt-4">
+                    <p class="text-3xl font-bold">DETAIL</p>
+                    <div class="mt-3 lg:mt-0 flex">
+                        <span 
+                            class="text-gray-100 text-md font-bold mr-2 px-3 py-1 rounded-lg shadow-md"
+                            v-bind:class="{ 'bg-red-600': toggle1, 'bg-green-600': !toggle1 }"
+                        >{{status}}</span>
+                        <span class="pt-1">
+                            <span style="vertical-align:middle;"><ion-icon class="-rotate-90 text-2xl" name="battery-full"></ion-icon></span> 
+                            <span class="text-gray-800 text-md font-bold">90%</span>
+                        </span>
+                    </div>
+                </div>            
+                <div class="my-6 mx-1">
+                    <p class="py-1"><span class="font-bold">ID :</span> Durian1</p>
+                    <p class="py-1"><span class="font-bold">Alamat :</span> {{alamat}}</p>
+                    <p class="py-1">
+                        <span class="font-bold">Status :</span> 
+                        <span v-bind:class="{ 'text-red-600': toggle1, 'text-green-600': !toggle1 }">{{diambil}}</span>
+                    </p>
+                    <p class="py-2 font-bold">Gambar :</p>
+                    <img class="lg:w-full w-4/5 py-1 rounded-xl object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                    
                 </div>
-
-                <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+                <div class="flex">
+                    <div class="item grow mx-1">
+                        <button @click="sampahDiambil" 
+                            class="px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize rounded-md w-full"
+                            v-bind:class="{ 'bg-green-600': toggle1, 'bg-gray-300': !toggle1, 'hover:bg-green-500': toggle1 }"
+                        >
+                            Ambil Sampah
+                        </button>
                     </div>
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
-                    </div>
-                    <div class="box text-center">
-                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+                    <div class="item w-1/4 mx-1">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 w-full">
+                            Chat
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="box md:col-span-2 col-span-6 bg-gray-100 items-center p-7 mt-12">
-            <div class="w-full lg:sm:flex lg:items-center lg:justify-between mt-4">
-                <p class="text-3xl font-bold">DETAIL</p>
-                <div class="mt-3 lg:mt-0 flex">
-                    <span class="bg-red-500 text-gray-100 text-md font-bold mr-2 px-3 py-1 rounded-lg shadow-md">Penuh</span>
-                    <span class="pt-1">
-                        <span style="vertical-align:middle;"><ion-icon class="-rotate-90 text-2xl" name="battery-full"></ion-icon></span> 
-                        <span class="text-gray-800 text-md font-bold">90%</span>
-                    </span>
-                </div>
-            </div>            
-            <div class="my-6 mx-1">
-                <p class="py-1"><span class="font-bold">ID :</span> Durian1</p>
-                <p class="py-1"><span class="font-bold">Alamat :</span> Jl. Rumah orang lain Gg durian</p>
-                <p class="py-1"><span class="font-bold">Status :</span> <span class="text-red-500">Belum Ada yang mengambil</span></p>
-                <p class="py-2 font-bold">Gambar :</p>
-                <img class="lg:w-full w-4/5 py-1 rounded-xl object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
-                
-            </div>
-            <div class="flex">
-                <div class="item grow mx-1">
-                    <button class="px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-green-600 rounded-md hover:bg-green-500 w-full">
-                        Ambil Sampah
-                    </button>
-                </div>
-                <div class="item w-1/4 mx-1">
-                    <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 w-full">
-                        Chat
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>      
+        </div>   
+    </div>   
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    toggle1: false, //false = gk penuh
+                    toggle2: false,
+                    toggle3: false,
+                    toggle4: false,
+                    toggle5: false,
+                    toggle6: false,
+                    status: null,
+                    alamat: null,
+                    diambil: null,
+                    dropdown: 'Gg Durian'
+                }
+            },
+            mounted () {
+                // get data every 100ms
+                this.interval = setInterval(() => {
+                    axios
+                    .get('https://api.thingspeak.com/channels/1760232/feeds.json?api_key=L0RPIZCS3OJBUPD6&results=2')
+                    .then(response => (
+                        data = response.data.feeds,
+                        latest =  data[data.length-1],
+                        this.status = latest.field1,
+                        this.alamat = latest.field2,
+                        this.diambil = latest.field3,
+                        this.toggle1 = latest.field1 == 'Penuh' ? true : false
+                        // console.log(latest)
+                    ))
+                }, 100 );
+            },
+            methods: {
+                sampahDiambil(){
+                   if (this.toggle1) {
+                        axios
+                        .post('https://api.thingspeak.com/update?api_key=R02TSPZ1CR8IOCOX&field1=Tidak Penuh&field2=Jl.Esp32oke&field3=Sudah Diambil')
+                        .then(response => (
+                            console.log(response)
+                        ))
+                   }
+                },
+                selectGg(Gg){
+                    this.dropdown = Gg
+                }
+            }
+        })
+    </script>
 </body>
 </html>
