@@ -5,102 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/f5a5035f15.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="bg-violet-500 shadow">
-        <div class="container px-6 py-3 mx-auto md:flex">
-            <div class="flex items-center justify-between">
-                <div>
+    <nav class="shadow bg-violet-500 fixed w-full max-h-44">
+        <div class="container px-10 py-2 mx-auto flex">
+            <div class="w-full sm:flex sm:items-center sm:justify-between">
+                <div class="text-center mb-4 mt-2 sm:mb-0 sm:mt-0">
                     <a class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">
                         Smart Trash Can
                     </a>
                 </div>
                 
-                <!-- Mobile menu button -->
-                <div class="flex md:hidden">
-                    <button type="button" class="text-gray-500" aria-label="toggle menu">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                <div class="relative">
+                    <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="flex justify-between w-full text-white bg-violet-400 font-medium rounded-lg shadow-xl text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">
+                        <p>Dropdown button</p> 
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                </div>
 
-                
-                <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
-                <div id="dropdown" class="hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -22px);">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-                        </li>
-                    </ul>
+                    <div id="dropdown" class="w-full z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, -22px);">
+                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="grid overflow-hidden md grid-cols-5 auto-rows-auto">
-        <div class="box col-span-3 bg-red-100">10</div>
-        <div class="box col-span-2 bg-gray-100 items-center p-7">
-            <div class="grid overflow-hidden items-center my-3 md grid-cols-5 auto-rows-auto gap-1">
-                <div class="box col-span-3 text-3xl font-bold">DETAIL</div>
-                <div class="box col-span-1"> 
-                    <button class="px-4 py-2 font-medium text-white capitalize bg-red-600 rounded-md">
-                        Penuh
-                    </button>
-                </div>
-                <div class="box col-span-1">battery</div>
-            </div>
-            
-            <div class="container my-6 mx-4">
-                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
-                    <div class="box col-span-1">Nama :</div>
-                    <div class="box col-span-4">
-                        <p>Budi</p>
+
+    <div class="grid overflow-hidden md:h-screen md grid-cols-6 auto-rows-auto">
+        <div class="box md:col-span-4 col-span-6 bg-red-100 md:mt-7 sm:mt-0 mt-10 md:pt-0 pt-10">
+            <div class="bg-white md:h-screen grid content-center md:pt-0 pt-12">
+                <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+                    </div>
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
+                    </div>
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
                     </div>
                 </div>
-                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
-                    <div class="box col-span-1">Lokasi :</div>
-                    <div class="box col-span-4">
-                        <p>jl. kjdkjsdskdjskdskdj</p>
+
+                <div class="w-full bg-gray-300 text-center md:my-6 my-2">
+                    <p class="m-auto md:py-3 py-1">Jl.Rumah Gg.Durian</p>
+                </div>
+
+                <div class="grid overflow-hidden grid-cols-3 auto-rows-auto gap-2 md:py-5 py-2">
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
                     </div>
-                </div>
-                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
-                    <div class="box col-span-1">Status :</div>
-                    <div class="box col-span-4">
-                        <p>Diambil</p>
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
                     </div>
-                </div>
-                <div class="grid overflow-hidden my-2 md grid-cols-5 auto-rows-auto gap-1">
-                    <div class="box col-span-1">Gambar :</div>
-                </div>
-                <div class="mx-6">
-                    <img class="w-full h-64 rounded-xl shadow-lg object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
-                </div>
-                <div class="grid overflow-hidden md grid-cols-5 auto-rows-auto gap-1 mt-5">
-                    <div class="box col-span-4">
-                        <button class="px-4 py-2 font-medium text-white capitalize bg-green-600 rounded-md hover:bg-green-500 w-full">
-                            Ambil Sampah
-                        </button>
-                    </div>
-                    <div class="box col-span-1">
-                        <button class="px-4 py-2 font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 w-full">
-                            Chat
-                        </button>
+                    <div class="box text-center">
+                        <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 md:w-20 w-14 md:h-20 h-14">1</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+        <div class="box md:col-span-2 col-span-6 bg-gray-100 items-center p-7 mt-12">
+            <div class="w-full lg:sm:flex lg:items-center lg:justify-between mt-4">
+                <p class="text-3xl font-bold">DETAIL</p>
+                <div class="mt-3 lg:mt-0 flex">
+                    <span class="bg-red-500 text-gray-100 text-md font-bold mr-2 px-3 py-1 rounded-lg shadow-md">Penuh</span>
+                    <span class="pt-1">
+                        <span style="vertical-align:middle;"><ion-icon class="-rotate-90 text-2xl" name="battery-full"></ion-icon></span> 
+                        <span class="text-gray-800 text-md font-bold">90%</span>
+                    </span>
+                </div>
+            </div>            
+            <div class="my-6 mx-1">
+                <p class="py-1"><span class="font-bold">ID :</span> Durian1</p>
+                <p class="py-1"><span class="font-bold">Alamat :</span> Jl. Rumah orang lain Gg durian</p>
+                <p class="py-1"><span class="font-bold">Status :</span> <span class="text-red-500">Belum Ada yang mengambil</span></p>
+                <p class="py-2 font-bold">Gambar :</p>
+                <img class="lg:w-full w-4/5 py-1 rounded-xl object-cover" src="https://images.unsplash.com/photo-1562077981-4d7eafd44932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                
+            </div>
+            <div class="flex">
+                <div class="item grow mx-1">
+                    <button class="px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-green-600 rounded-md hover:bg-green-500 w-full">
+                        Ambil Sampah
+                    </button>
+                </div>
+                <div class="item w-1/4 mx-1">
+                    <button class="lg:px-4 py-2 md:text-sm text-center lg:text-md font-medium text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 w-full">
+                        Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>      
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 </body>
 </html>
